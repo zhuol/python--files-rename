@@ -1,8 +1,12 @@
 import os
 from os import rename, listdir
 
-directory = "C:\\inetpub\\wwwroot\\XXX"
+directory = "C:\\Users\\zhuol\\Google Drive\\HP&&Code\\zhuoSong\\img"
+index=1
 for filename in os.listdir(directory):
-    path = os.path.join(directory, filename)
-    target = os.path.join(directory, filename.replace(" ", "")+".midi")
-    os.rename(path, target)
+	if filename.endswith(".jpg"):
+		path = os.path.join(directory, filename)
+		target = os.path.join(directory, "bg"+str(index)+".jpg")
+		print target
+		os.rename(path, target)
+		index+=1
